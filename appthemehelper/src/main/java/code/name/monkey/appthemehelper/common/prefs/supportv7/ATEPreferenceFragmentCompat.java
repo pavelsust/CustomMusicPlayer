@@ -8,12 +8,14 @@ import androidx.preference.PreferenceFragmentCompat;
 import code.name.monkey.appthemehelper.common.prefs.supportv7.dialogs.ATEListPreferenceDialogFragmentCompat;
 import code.name.monkey.appthemehelper.common.prefs.supportv7.dialogs.ATEPreferenceDialogFragment;
 
-import static androidx.preference.PreferenceFragmentCompat.*;
+
+import android.annotation.SuppressLint;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
 public abstract class ATEPreferenceFragmentCompat extends PreferenceFragmentCompat {
+    @SuppressLint("RestrictedApi")
     @Override
     public void onDisplayPreferenceDialog(Preference preference) {
         if (getCallbackFragment() instanceof OnPreferenceDisplayDialogCallback) {
