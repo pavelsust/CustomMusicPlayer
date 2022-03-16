@@ -1,5 +1,18 @@
 package com.rockstreamer.custommusicplayer.model
 
+import android.os.Parcelable
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import kotlinx.parcelize.Parcelize
 
-class CategoryInfo {
+@Parcelize
+data class CategoryInfo(): Parcelable {
+
+    enum class Category(
+        val id: Int,
+        @StringRes val stringRes: Int,
+        @DrawableRes val icon: Int
+    ){
+        Home(R.id.ac)
+    }
 }
