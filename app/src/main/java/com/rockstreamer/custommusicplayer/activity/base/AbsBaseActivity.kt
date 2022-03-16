@@ -1,4 +1,4 @@
-package com.rockstreamer.custommusicplayer.activity
+package com.rockstreamer.custommusicplayer.activity.base
 
 import android.os.Bundle
 import code.name.monkey.appthemehelper.common.ATHToolbarActivity
