@@ -1,5 +1,6 @@
 package code.name.monkey.appthemehelper.util;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -123,7 +124,7 @@ public final class ToolbarContentTintHelper {
         public static void setOverflowButtonColor(@NonNull Activity activity,
                 final @ColorInt int color) {
             final String overflowDescription = activity
-                    .getString(R.string.abc_action_menu_overflow_description);
+                    .getString(R.string.app_name);
             final ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
             final ViewTreeObserver viewTreeObserver = decorView.getViewTreeObserver();
             viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -146,7 +147,7 @@ public final class ToolbarContentTintHelper {
                 @Nullable MenuPopupHelper menuPopupHelper, final @ColorInt int color) {
             try {
                 if (menuPopupHelper != null) {
-                    final ListView listView = ((ShowableListMenu) menuPopupHelper.getPopup()).getListView();
+                    @SuppressLint("RestrictedApi") final ListView listView = ((ShowableListMenu) menuPopupHelper.getPopup()).getListView();
                     listView.getViewTreeObserver()
                             .addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                                 @Override
@@ -254,6 +255,7 @@ public final class ToolbarContentTintHelper {
             mToolbar = toolbar;
         }
 
+        @SuppressLint("RestrictedApi")
         @Override
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
             if (mParentCb != null) {
@@ -261,6 +263,7 @@ public final class ToolbarContentTintHelper {
             }
         }
 
+        @SuppressLint("RestrictedApi")
         @Override
         public boolean onOpenSubMenu(MenuBuilder subMenu) {
             InternalToolbarContentTintUtil.applyOverflowMenuTint(mContext, mToolbar, mColor);
@@ -294,7 +297,7 @@ public final class ToolbarContentTintHelper {
     }
 
     public static void colorBackButton(@NonNull Toolbar toolbar) {
-        int color = ATHUtil.INSTANCE.resolveColor(toolbar.getContext(), R.attr.colorControlNormal);
+        int color = ATHUtil.INSTANCE.resolveColor(toolbar.getContext(), androidx.appcompat.R.attr.colorControlNormal);
         final PorterDuffColorFilter colorFilter = new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY);
         for (int i = 0; i < toolbar.getChildCount(); i++) {
             final View backButton = toolbar.getChildAt(i);
@@ -411,6 +414,7 @@ public final class ToolbarContentTintHelper {
                 secondaryTextColor, menuWidgetColor);
     }
 
+    @SuppressLint("RestrictedApi")
     @SuppressWarnings("unchecked")
     public static void setToolbarContentColor(@NonNull Context context,
             Toolbar toolbar,
@@ -512,7 +516,7 @@ public final class ToolbarContentTintHelper {
         for (int i = 0; i < menu.size(); ++i) {
             final MenuItem item = menu.getItem(i);
             tintMenuItemIcon(color, item);
-            tintShareIconIfPresent(color, item);
+
         }
     }
 
@@ -571,7 +575,7 @@ public final class ToolbarContentTintHelper {
     private static void setOverflowButtonColor(final Activity activity,
             final PorterDuffColorFilter colorFilter) {
         final String overflowDescription = activity
-                .getString(R.string.abc_action_menu_overflow_description);
+                .getString(R.string.app_name);
         final ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
         final ViewTreeObserver viewTreeObserver = decorView.getViewTreeObserver();
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -600,20 +604,5 @@ public final class ToolbarContentTintHelper {
         }
     }
 
-    private static void tintShareIconIfPresent(int color, MenuItem item) {
-        if (item.getActionView() != null) {
-            final View actionView = item.getActionView();
-            final View expandActivitiesButton = actionView.findViewById(R.id.expand_activities_button);
-            if (expandActivitiesButton != null) {
-                final ImageView image = (ImageView) expandActivitiesButton.findViewById(R.id.image);
-                if (image != null) {
-                    final Drawable drawable = image.getDrawable();
-                    final Drawable wrapped = DrawableCompat.wrap(drawable);
-                    drawable.mutate();
-                    DrawableCompat.setTint(wrapped, color);
-                    image.setImageDrawable(drawable);
-                }
-            }
-        }
-    }
+
 }

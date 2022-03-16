@@ -23,6 +23,9 @@
     <color name="ate_switch_thumb_disabled_light">#FFBDBDBD</color>
     <!---->
 
+    <color name="ripple_material_dark">#33ffffff</color>
+    <color name="ripple_material_light">#1f000000</color>`
+
     <!--DARK-->
     <!--10%-->
     <color name="ate_switch_track_disabled_dark">#1AFFFFFF</color>

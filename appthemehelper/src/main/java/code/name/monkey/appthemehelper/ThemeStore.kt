@@ -199,7 +199,7 @@ private constructor(private val mContext: Context) : ThemeStorePrefKeys, ThemeSt
         fun primaryColor(context: Context): Int {
             return prefs(context).getInt(
                 ThemeStorePrefKeys.KEY_PRIMARY_COLOR,
-                resolveColor(context, R.attr.colorPrimary, Color.parseColor("#455A64"))
+                resolveColor(context, com.google.android.material.R.attr.colorPrimary, Color.parseColor("#455A64"))
             )
         }
 
@@ -213,7 +213,7 @@ private constructor(private val mContext: Context) : ThemeStorePrefKeys, ThemeSt
             val desaturatedColor = prefs(context).getBoolean("desaturated_color", false)
             val color = prefs(context).getInt(
                 ThemeStorePrefKeys.KEY_ACCENT_COLOR,
-                resolveColor(context, R.attr.colorAccent, Color.parseColor("#263238"))
+                resolveColor(context, com.google.android.material.R.attr.colorPrimary, Color.parseColor("#263238"))
             )
             return if (isWindowBackgroundDark(context) && desaturatedColor) ColorUtil.desaturateColor(
                 color,
