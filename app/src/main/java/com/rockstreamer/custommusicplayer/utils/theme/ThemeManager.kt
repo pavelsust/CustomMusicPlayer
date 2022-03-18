@@ -6,7 +6,12 @@ import com.rockstreamer.custommusicplayer.utils.PreferenceUtil
 
 object ThemeManager {
 
+
     @StyleRes
-    fun getThemeResValue(context: Context):Int =
-        if (PreferenceUtil.)
+    fun getThemeResValue(
+        context: Context
+    ): Int = if (PreferenceUtil.ma)
+
+
+
 }

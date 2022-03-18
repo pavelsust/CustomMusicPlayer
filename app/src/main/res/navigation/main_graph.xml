@@ -8,9 +8,37 @@
 
     <fragment
         android:id="@+id/genreDetailsFragment"
-        tools:layout="frag"
         android:name="com.rockstreamer.custommusicplayer.fragment.genres.GenreDetailsFragment"
         android:label="GenreDetailsFragment" />
+    <fragment
+        android:id="@+id/playlistDetailsFragment"
+        android:name="com.rockstreamer.custommusicplayer.fragment.playlists.PlaylistDetailsFragment"
+        android:label="PlaylistDetailsFragment" />
+    <fragment
+        android:id="@+id/albumDetailsFragment"
+        android:name="com.rockstreamer.custommusicplayer.fragment.albums.AlbumDetailsFragment"
+        android:label="AlbumDetailsFragment" />
+    <fragment
+        android:id="@+id/artistDetailsFragment"
+        android:name="com.rockstreamer.custommusicplayer.fragment.artists.ArtistDetailsFragment"
+        android:label="ArtistDetailsFragment" />
+    <fragment
+        android:id="@+id/albumArtistDetailsFragment"
+        android:name="com.rockstreamer.custommusicplayer.fragment.artists.AlbumArtistDetailsFragment"
+        android:label="AlbumArtistDetailsFragment" />
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.rockstreamer.custommusicplayer.fragment.library.LibraryFragment"
+        android:label="LibraryFragment" />
+    <fragment
+        android:id="@+id/detailListFragment"
+        android:name="com.rockstreamer.custommusicplayer.fragment.other.DetailListFragment"
+        android:label="DetailListFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.rockstreamer.custommusicplayer.fragment.search.SearchFragment"
+        android:label="SearchFragment" />
+
 
 
 </navigation>

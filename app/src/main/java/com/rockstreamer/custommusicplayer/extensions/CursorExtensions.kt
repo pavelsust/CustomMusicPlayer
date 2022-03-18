@@ -14,6 +14,7 @@
  */
 package com.rockstreamer.custommusicplayer.extensions
 
+import android.content.SharedPreferences
 import android.database.Cursor
 
 // exception is rethrown manually in order to have a readable stacktrace
@@ -25,6 +26,13 @@ internal fun Cursor.getInt(columnName: String): Int {
         throw IllegalStateException("invalid column $columnName", ex)
     }
 }
+
+
+fun SharedPreferences.getStringOrDefault(key: String, default: String): String {
+    return getString(key, default) ?: default
+}
+
+
 
 internal fun Cursor.getLong(columnName: String): Long {
     try {

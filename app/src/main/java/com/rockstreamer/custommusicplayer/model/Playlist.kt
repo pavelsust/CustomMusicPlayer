@@ -2,7 +2,7 @@ package com.rockstreamer.custommusicplayer.model
 
 import android.content.Context
 import android.os.Parcelable
-import code.name.monkey.retromusic.repository.RealPlaylistRepository
+import com.rockstreamer.custommusicplayer.repository.RealPlaylistRepository
 import code.name.monkey.retromusic.util.MusicUtil
 import kotlinx.parcelize.Parcelize
 import org.koin.core.component.KoinComponent
