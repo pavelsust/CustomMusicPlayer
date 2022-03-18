@@ -3,6 +3,7 @@ package com.rockstreamer.custommusicplayer.model
 import android.os.Parcelable
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import com.rockstreamer.custommusicplayer.R
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
