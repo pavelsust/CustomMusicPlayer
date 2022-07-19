@@ -17,6 +17,7 @@ package com.rockstreamer.custommusicplayer.model
 import code.name.monkey.retromusic.helper.SortOrder
 import code.name.monkey.retromusic.util.MusicUtil
 import code.name.monkey.retromusic.util.PreferenceUtil
+import com.rockstreamer.custommusicplayer.helper.SortOrder
 
 data class Artist(
     val id: Long,

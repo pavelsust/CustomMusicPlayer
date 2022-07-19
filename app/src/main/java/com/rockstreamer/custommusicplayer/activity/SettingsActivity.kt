@@ -7,8 +7,6 @@ import com.rockstreamer.custommusicplayer.interfaces.OnThemeChangedListener
 
 class SettingsActivity: AbsThemeActivity(), ColorCallback , OnThemeChangedListener {
 
-    private lateinit var binding: Ac
-
     override fun run() {
         TODO("Not yet implemented")
     }

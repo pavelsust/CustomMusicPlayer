@@ -1,8 +1,9 @@
-package code.name.monkey.retromusic.model.smartplaylist
+package com.rockstreamer.custommusicplayer.model.smartplaylist
 
-import code.name.monkey.retromusic.App
-import code.name.monkey.retromusic.R
-import code.name.monkey.retromusic.model.Song
+import code.name.monkey.retromusic.model.smartplaylist.AbsSmartPlaylist
+import com.rockstreamer.custommusicplayer.App
+import com.rockstreamer.custommusicplayer.R
+import com.rockstreamer.custommusicplayer.model.Song
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
